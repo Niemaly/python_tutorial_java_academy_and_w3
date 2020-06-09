@@ -1,0 +1,1 @@
+print("programowanie jest super!")

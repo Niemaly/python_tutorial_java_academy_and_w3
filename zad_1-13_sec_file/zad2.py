@@ -1,0 +1,1 @@
+print("Akademia\n"*15)
