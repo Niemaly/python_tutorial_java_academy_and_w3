@@ -7,12 +7,22 @@ class BusinessCard:
         self.email = f'{self.name}.{self.surname}@{domain}'
         self.no_want_this = "i dont want this in my json"
 
-    def to_jason(self):
+    def to_json(self):
         return {'name': self.name, "surname": self.surname, "email": self.email}
+
 
 my_business_card = BusinessCard( "Jacek","Szumski")
 
+
 def to_json(obj):
-    return json.dumps(obj.to_jason())
+    return json.dumps(obj.to_json())
+
 
 print(to_json(my_business_card))
+
+employees = [BusinessCard("Jacek", "Szumski"), BusinessCard("Wacław", "Pieniążek"), BusinessCard("Paweł", "Grabowski")]
+
+employees_data = {'employees': [business_card.to_json()
+                  for business_card in employees]}
+
+print(json.dumps(employees_data))
